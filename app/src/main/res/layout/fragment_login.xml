@@ -53,6 +53,7 @@
                         android:layout_marginBottom="24dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_login_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Email"
@@ -67,6 +68,7 @@
                         android:layout_marginBottom="24dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_login_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Password"
@@ -77,8 +79,15 @@
                         android:id="@+id/button_login"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:layout_marginBottom="64dp"
-                        android:text="Login" />
+                        android:text="Login"
+                        />
+
+                    <Button
+                        android:id="@+id/button_to_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:text="register"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

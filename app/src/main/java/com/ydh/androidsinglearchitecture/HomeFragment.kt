@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.ydh.androidsinglearchitecture.databinding.FragmentHomeBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class HomeFragment : Fragment() {
@@ -19,7 +21,14 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+        setView()
+        
         return binding.root
+    }
+
+    private fun setView(){
+        (activity as AppCompatActivity).supportActionBar?.show()
+        (activity as AppCompatActivity).navigationBottom.visibility = View.VISIBLE
     }
 
 

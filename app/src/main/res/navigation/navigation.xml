@@ -8,16 +8,33 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.ydh.androidsinglearchitecture.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.ydh.androidsinglearchitecture.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.ydh.androidsinglearchitecture.RegisterFragment"
-        android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.ydh.androidsinglearchitecture.ListFragment"
+        android:label="List"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ydh.androidsinglearchitecture.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
