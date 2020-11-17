@@ -10,6 +10,7 @@ import android.view.View
 import androidx.core.util.forEach
 import androidx.core.util.set
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -33,13 +34,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // binding root element of view
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         navigationController = this.findNavController(R.id.myNavHostFragment)
 
+        // setup navigation view
         setNavigation()
+
+        // check if user already logged in
         if (!prefs.loggedIn){
             navigationController.navigate(R.id.loginFragment)
         }
+
     }
 
     private fun setNavigation(){
@@ -49,9 +56,15 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navigationController.graph)
     }
 
+    // set back method
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return NavigationUI.navigateUp(navController, appBarConfiguration)
+    }
+
+    //
+    override fun onBackPressed() {
+
     }
 
 }

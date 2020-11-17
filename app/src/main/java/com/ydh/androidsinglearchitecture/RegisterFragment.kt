@@ -22,6 +22,7 @@ class RegisterFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_register, container, false )
 
         setListener()
+        (activity as AppCompatActivity).supportActionBar?.title = "Register"
         (activity as AppCompatActivity).supportActionBar?.show()
 
 

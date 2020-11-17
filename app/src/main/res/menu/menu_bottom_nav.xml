@@ -4,10 +4,11 @@
     <item android:title="Home"
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_baseline_home_24"/>
-    <item android:title="Profile"
-        android:id="@+id/profileFragment"
-        android:icon="@drawable/ic_baseline_person_24"/>
+
     <item android:title="List"
         android:id="@+id/listFragment"
         android:icon="@drawable/ic_baseline_list_alt_24"/>
+    <item android:title="Profile"
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_baseline_person_24"/>
 </menu>
