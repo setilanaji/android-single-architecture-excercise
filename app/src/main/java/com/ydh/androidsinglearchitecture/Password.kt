@@ -4,7 +4,7 @@ package com.ydh.androidsinglearchitecture
 class Password(private val password: String) {
     private val minSize = 8
     private val maxSIze = 20
-    private val regex = Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~\$^+=<>]).{8,20}\$")
+    private val regex = Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}\$")
     val isValidPassword: Boolean
         get() = validatePassword()
 
@@ -17,7 +17,6 @@ class Password(private val password: String) {
     }
 
     private fun validatePasswordFormat(): Boolean {
-        println(password)
         return password.length in minSize..maxSIze && password.matches(
             regex
         )

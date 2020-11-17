@@ -8,6 +8,9 @@ import androidx.lifecycle.MutableLiveData
 
 class LoginViewModel(application: Application) : AndroidViewModel(application){
 
+    private val prefs: UserSession by lazy {
+        UserSession(App.instance)
+    }
 //    private lateinit var password: Password
 //    lateinit var email:Email
 
@@ -45,8 +48,8 @@ class LoginViewModel(application: Application) : AndroidViewModel(application){
         println("${email.isValidEmail}")
         println("${password.isValidPassword}")
         if (password.isValidPassword && email.isValidEmail) {
-            println("Masuk")
             _isLogged.value = RegisteredState.LOGGED
+            prefs.loggedIn = true
         }
     }
 }

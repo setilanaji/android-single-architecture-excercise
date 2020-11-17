@@ -38,7 +38,6 @@ class LoginFragment : Fragment() {
         setListener()
         setObserver()
 
-
         return binding.root
     }
 
@@ -47,7 +46,6 @@ class LoginFragment : Fragment() {
             isEmailValid.observe(viewLifecycleOwner, isValidEmailObserver)
             isPasswordValid.observe(viewLifecycleOwner, isValidPasswordObserver)
             isLogged.observe(viewLifecycleOwner, isLoggedObserver)
-
         }
      }
 
@@ -82,6 +80,7 @@ class LoginFragment : Fragment() {
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
         }
 
         override fun afterTextChanged(s: Editable?) {
@@ -108,11 +107,10 @@ class LoginFragment : Fragment() {
         Observer<LoginViewModel.RegisteredState> { t ->
             when(t){
                 LoginViewModel.RegisteredState.LOGGED -> {
-                    Toast.makeText(context, "Login is succes", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Login is succes", Toast.LENGTH_LONG).show()
                     this.findNavController().navigate(R.id.homeFragment)
                 }
-                LoginViewModel.RegisteredState.UNLOGGED -> Toast.makeText(context, "Login is un succeed", Toast.LENGTH_LONG).show()
-
+                LoginViewModel.RegisteredState.UNLOGGED -> Toast.makeText(requireContext(), "Login is un succeed", Toast.LENGTH_LONG).show()
             }
         }
 
